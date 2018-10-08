@@ -1,0 +1,69 @@
+"a" = (/turf/simulated/floor,/area/planets/Geminusindoor)
+"b" = (/turf/simulated/wall/rust,/area/planets/Geminusindoor)
+"c" = (/turf/simulated/floor/rust/right,/area/planets/Geminusindoor)
+"d" = (/turf/simulated/floor/beach/water/ocean{color = "#0f5b24"},/area/planets/Geminusindoor)
+"e" = (/turf/simulated/floor/rust/left,/area/planets/Geminusindoor)
+"f" = (/obj/machinery/door/airlock/woodframe,/turf/simulated/floor,/area/planets/Geminusindoor)
+"g" = (/turf/simulated/floor/rust,/area/planets/Geminusindoor)
+"h" = (/obj/machinery/light/small/readylight{tag = "icon-bulb1 (NORTH)"; icon_state = "bulb1"; dir = 1},/turf/simulated/floor/rust,/area/planets/Geminusindoor)
+"i" = (/turf/simulated/floor/rust/downleft,/area/planets/Geminusindoor)
+"j" = (/turf/simulated/floor/rust/downright,/area/planets/Geminusindoor)
+"k" = (/turf/simulated/floor/rust/up,/area/planets/Geminusindoor)
+"l" = (/obj/machinery/light/small/readylight,/turf/simulated/floor/rust/up,/area/planets/Geminusindoor)
+"m" = (/turf/simulated/floor/rust/upleft,/area/planets/Geminusindoor)
+"n" = (/turf/simulated/floor/rust/upright,/area/planets/Geminusindoor)
+"o" = (/turf/simulated/floor/rust{tag = "icon-rustup"; icon_state = "rustup"},/area/planets/Geminusindoor)
+"p" = (/obj/machinery/light/small/readylight{dir = 4},/turf/simulated/floor/rust/left,/area/planets/Geminusindoor)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaabcdddebaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaafcdddebaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaabcdddebaaaaaaaaaaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbcdddebbbbaaaaaaaaaaaaaaaaaaaaaaaa
+aagggggggggghggghidddjhgggaaaaaaaaaaaaaaaaaaaaaaaa
+aaddddddddddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaa
+aakkkkklkkkkkkkkkmdddnooooaaaaaaaaaaaaaaaaaaaaaaaa
+bbbbbbbbbbbbbbbbbcdddpbbbbaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaabcdddebaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaabcdddebaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaabcdddebaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaggggidddjgggggaaaaaaaaaaaaaaaaaaaaaaa
+aagggggggggggddddddddddddddaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaagggaaaddddddddddddddaaaaaaaaaaaaaaaaaaaaaaa
+aaoooooooooooddddddddddddddaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaddddddddddddddaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+"}
