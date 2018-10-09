@@ -804,3 +804,86 @@
 	if(ismob(D))
 		D.pixel_y = src.passenger_offset_y
 		D.pixel_x = src.passenger_offset_x
+
+/obj/gta13cars/car/sportscar/redsportcar
+	name = "red sports car"
+	desc = "A very luxurious vehicle."
+	icon = 'icons/gta13/cars/redsportscar.dmi'
+	icon_state = "redsportscar"
+
+
+
+/obj/gta13cars/car/sportscar/redsportcar/update_dir_car_overlays()
+	var/atom/movable/C = src.load
+	var/atom/movable/D = src.passenger
+	src.overlays = null
+	if(src.dir == NORTH||SOUTH||WEST)
+		if(src.dir == NORTH)	//|| place car sprite over mobs
+			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_north", layer = src.layer + 0.2)
+			src.overlays += I
+
+			src.mob_offset_x = 2
+			src.mob_offset_y = 20
+				//||move the driver & passenger back to the original layer
+			if(passenger && load)
+				C.layer = default_layer
+				D.layer = default_layer
+			src.passenger_offset_x = 22
+			src.passenger_offset_y = 20
+
+		else if(src.dir == SOUTH)
+
+			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_south", layer = src.layer + 0.2)
+			overlays += I
+				//||move the driver & passenger back to the original layer
+			if(passenger && load)
+				C.layer = default_layer
+				D.layer = default_layer
+			src.mob_offset_x = 20
+			src.mob_offset_y = 27
+
+			src.passenger_offset_x = 3
+			src.passenger_offset_y = 27
+
+		else if(src.dir == WEST)
+
+			src.mob_offset_x = 34
+			src.mob_offset_y = 10
+				//||move the driver the one layer above the passenger, so he is displayed properly when they overlap
+			if(passenger && load)
+				C.layer = default_layer + 0.1
+				D.layer = default_layer
+			src.passenger_offset_x = 34
+			src.passenger_offset_y = 23
+
+			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_west", layer = src.layer + 0.2)
+			src.overlays += I
+			if(passenger && !load)
+				var/image/S = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_west_passenger", layer = src.layer + 0.2)
+				src.overlays += S
+
+		else if(src.dir == EAST)
+
+			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_east_passenger", layer = src.layer + 0.2)
+
+			src.passenger_offset_x = 20
+			src.passenger_offset_y = 10
+				//||move the driver back to the original layer & passenger up one layer to prevent overlap
+			if(passenger && load)
+				C.layer = default_layer
+				D.layer = default_layer + 0.1
+			src.mob_offset_x = 20
+			src.mob_offset_y = 23
+
+			src.overlays += I
+
+			if(!passenger )
+				var/image/S = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_east", layer = src.layer + 0.2)
+				src.overlays += S
+
+	if(ismob(C))
+		C.pixel_y = src.mob_offset_y
+		C.pixel_x = src.mob_offset_x
+	if(ismob(D))
+		D.pixel_y = src.passenger_offset_y
+		D.pixel_x = src.passenger_offset_x
