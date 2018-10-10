@@ -158,13 +158,18 @@
 		if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
 			to_chat(usr, "<span class='warning'>The round is either not ready, or has already finished...</span>")
 			return
-		LateChoices() //show the latejoin job selection menu
+
+		var/datum/job/job = job_master.GetJob("Immigrant")
+
+
+		AttemptLateSpawn(job, client.prefs.spawnpoint)
+		return
 
 	if(href_list["manifest"])
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		var/datum/job/job = job_master.GetJob(href_list["SelectedJob"])
+		var/datum/job/job = job_master.GetJob("Immigrant")
 
 		if(!job)
 			to_chat(usr, "<span class='danger'>The job '[href_list["SelectedJob"]]' doesn't exist!</span>")

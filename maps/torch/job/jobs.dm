@@ -1059,7 +1059,7 @@
 
 
 /datum/job/assistant
-	title = "Passenger"
+	title = "Immigrant"
 	total_positions = 12
 	spawn_positions = 12
 	supervisors = "the Executive Officer"
@@ -1079,12 +1079,6 @@
 		"Trainer",
 		"Off-Duty")
 	outfit_type = /decl/hierarchy/outfit/job/torch/passenger/passenger
-	allowed_branches = list(/datum/mil_branch/civilian)
-	allowed_ranks = list(
-		/datum/mil_rank/civ/civ,
-		/datum/mil_rank/civ/offduty,
-		/datum/mil_rank/civ/nt
-	)
 
 /datum/job/cyborg
 	total_positions = 3
