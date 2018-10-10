@@ -6,10 +6,15 @@
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/sportscar.dmi'
 	icon_state = "sportscar"
-
 	bound_width = 64
 	bound_height = 64
-
+	var/iscp = 'icons/gta13/cars/sportscar.dmi'
+	var/isn = "sportscar_north"
+	var/iss = "sportscar_south"
+	var/iswp ="sportscar_west_passenger"
+	var/isw = "sportscar_west"
+	var/isep = "sportscar_east_passenger"
+	var/ise = "sportscar_east"
 	fits_passenger = 1
 	passenger_item_visible = 1
 	load_item_visible = 1
@@ -554,7 +559,7 @@
 	src.overlays = null
 	if(src.dir == NORTH||SOUTH||WEST)
 		if(src.dir == NORTH)	//|| place car sprite over mobs
-			var/image/I = new(icon = 'icons/gta13/cars/sportscar.dmi', icon_state = "sportscar_north", layer = src.layer + 0.2)
+			var/image/I = new(icon = iscp, icon_state = isn, layer = src.layer + 0.2)
 			src.overlays += I
 
 			src.mob_offset_x = 2
@@ -568,7 +573,7 @@
 
 		else if(src.dir == SOUTH)
 
-			var/image/I = new(icon = 'icons/gta13/cars/sportscar.dmi', icon_state = "sportscar_south", layer = src.layer + 0.2)
+			var/image/I = new(icon = iscp, icon_state = iss, layer = src.layer + 0.2)
 			overlays += I
 				//||move the driver & passenger back to the original layer
 			if(passenger && load)
@@ -591,15 +596,15 @@
 			src.passenger_offset_x = 34
 			src.passenger_offset_y = 23
 
-			var/image/I = new(icon = 'icons/gta13/cars/sportscar.dmi', icon_state = "sportscar_west", layer = src.layer + 0.2)
+			var/image/I = new(icon = iscp, icon_state = isw, layer = src.layer + 0.2)
 			src.overlays += I
 			if(passenger && !load)
-				var/image/S = new(icon = 'icons/gta13/cars/sportscar.dmi', icon_state = "sportscar_west_passenger", layer = src.layer + 0.2)
+				var/image/S = new(icon = iscp, icon_state = iswp, layer = src.layer + 0.2)
 				src.overlays += S
 
 		else if(src.dir == EAST)
 
-			var/image/I = new(icon = 'icons/gta13/cars/sportscar.dmi', icon_state = "sportscar_east_passenger", layer = src.layer + 0.2)
+			var/image/I = new(icon = iscp, icon_state = isep, layer = src.layer + 0.2)
 
 			src.passenger_offset_x = 20
 			src.passenger_offset_y = 10
@@ -613,7 +618,7 @@
 			src.overlays += I
 
 			if(!passenger )
-				var/image/S = new(icon = 'icons/gta13/cars/sportscar.dmi', icon_state = "sportscar_east", layer = src.layer + 0.2)
+				var/image/S = new(icon = iscp, icon_state = ise, layer = src.layer + 0.2)
 				src.overlays += S
 
 	if(ismob(C))
@@ -810,80 +815,37 @@
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/redsportscar.dmi'
 	icon_state = "redsportscar"
+	iscp = 'icons/gta13/cars/redsportscar.dmi'
+	isn = "redsportscar_north"
+	iss = "redsportscar_south"
+	iswp ="redsportscar_west_passenger"
+	isw = "redsportscar_west"
+	isep = "redsportscar_east_passenger"
+	ise = "redsportscar_east"
+
+/obj/gta13cars/car/sportscar/bluesportcar
+	name = "blue sports car"
+	desc = "A very luxurious vehicle."
+	icon = 'icons/gta13/cars/bluesportscar.dmi'
+	icon_state = "bluesportscar"
+	iscp = 'icons/gta13/cars/bluesportscar.dmi'
+	isn = "bluesportscar_north"
+	iss = "bluesportscar_south"
+	iswp ="bluesportscar_west_passenger"
+	isw = "bluesportscar_west"
+	isep = "bluesportscar_east_passenger"
+	ise = "bluesportscar_east"
 
 
-
-/obj/gta13cars/car/sportscar/redsportcar/update_dir_car_overlays()
-	var/atom/movable/C = src.load
-	var/atom/movable/D = src.passenger
-	src.overlays = null
-	if(src.dir == NORTH||SOUTH||WEST)
-		if(src.dir == NORTH)	//|| place car sprite over mobs
-			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_north", layer = src.layer + 0.2)
-			src.overlays += I
-
-			src.mob_offset_x = 2
-			src.mob_offset_y = 20
-				//||move the driver & passenger back to the original layer
-			if(passenger && load)
-				C.layer = default_layer
-				D.layer = default_layer
-			src.passenger_offset_x = 22
-			src.passenger_offset_y = 20
-
-		else if(src.dir == SOUTH)
-
-			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_south", layer = src.layer + 0.2)
-			overlays += I
-				//||move the driver & passenger back to the original layer
-			if(passenger && load)
-				C.layer = default_layer
-				D.layer = default_layer
-			src.mob_offset_x = 20
-			src.mob_offset_y = 27
-
-			src.passenger_offset_x = 3
-			src.passenger_offset_y = 27
-
-		else if(src.dir == WEST)
-
-			src.mob_offset_x = 34
-			src.mob_offset_y = 10
-				//||move the driver the one layer above the passenger, so he is displayed properly when they overlap
-			if(passenger && load)
-				C.layer = default_layer + 0.1
-				D.layer = default_layer
-			src.passenger_offset_x = 34
-			src.passenger_offset_y = 23
-
-			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_west", layer = src.layer + 0.2)
-			src.overlays += I
-			if(passenger && !load)
-				var/image/S = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_west_passenger", layer = src.layer + 0.2)
-				src.overlays += S
-
-		else if(src.dir == EAST)
-
-			var/image/I = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_east_passenger", layer = src.layer + 0.2)
-
-			src.passenger_offset_x = 20
-			src.passenger_offset_y = 10
-				//||move the driver back to the original layer & passenger up one layer to prevent overlap
-			if(passenger && load)
-				C.layer = default_layer
-				D.layer = default_layer + 0.1
-			src.mob_offset_x = 20
-			src.mob_offset_y = 23
-
-			src.overlays += I
-
-			if(!passenger )
-				var/image/S = new(icon = 'icons/gta13/cars/redsportscar.dmi', icon_state = "redsportscar_east", layer = src.layer + 0.2)
-				src.overlays += S
-
-	if(ismob(C))
-		C.pixel_y = src.mob_offset_y
-		C.pixel_x = src.mob_offset_x
-	if(ismob(D))
-		D.pixel_y = src.passenger_offset_y
-		D.pixel_x = src.passenger_offset_x
+/obj/gta13cars/car/sportscar/greensportcar
+	name = "green sports car"
+	desc = "A very luxurious vehicle."
+	icon = 'icons/gta13/cars/greensportscar.dmi'
+	icon_state = "greensportscar"
+	iscp = 'icons/gta13/cars/greensportscar.dmi'
+	isn = "greensportscar_north"
+	iss = "greensportscar_south"
+	iswp ="greensportscar_west_passenger"
+	isw = "greensportscar_west"
+	isep = "greensportscar_east_passenger"
+	ise = "greensportscar_east"
