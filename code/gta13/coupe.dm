@@ -19,7 +19,7 @@
 	passenger_item_visible = 1
 	load_item_visible = 1
 	load_offset_x = 0
-
+	move_delay = 1
 		//||pixel_y offset for mob overlay
 	mob_offset_y = 7
 	passenger_offset_y = 20
@@ -636,7 +636,7 @@
 	desc = "A vehicle designed for the defenders of the law."
 	icon = 'icons/gta13/cars/policecar.dmi'
 	icon_state = "policecar"
-
+	move_delay = 0.7
 /obj/gta13cars/car/sportscar/policecar/update_dir_car_overlays()
 	var/atom/movable/C = src.load
 	var/atom/movable/D = src.passenger
