@@ -19,7 +19,7 @@
 	passenger_item_visible = 1
 	load_item_visible = 1
 	load_offset_x = 0
-
+	move_delay = 1
 		//||pixel_y offset for mob overlay
 	mob_offset_y = 7
 	passenger_offset_y = 20
@@ -636,7 +636,7 @@
 	desc = "A vehicle designed for the defenders of the law."
 	icon = 'icons/gta13/cars/policecar.dmi'
 	icon_state = "policecar"
-
+	move_delay = 0.7
 /obj/gta13cars/car/sportscar/policecar/update_dir_car_overlays()
 	var/atom/movable/C = src.load
 	var/atom/movable/D = src.passenger
@@ -849,3 +849,20 @@
 	isw = "greensportscar_west"
 	isep = "greensportscar_east_passenger"
 	ise = "greensportscar_east"
+
+/*
+Øàáëîí ñîçäàíèÿ íîâûõ äâóõìåñòíûõ ìàøèí êàáğèîëåòîâ
+/obj/gta13cars/car/sportscar/âàøà ìàøèíà - Ïóòü
+	name = "ÒÓÒ ÍÀÇÂÀÍÈÅ ÌÀØÈÍÛ"
+	desc = "ÅÅ ÎÏÈÑÀÍÈÅ"
+	icon = 'icons/gta13/cars/ÍÀÇÂÀÍÈÅ ÔÀÉËÀ ÑÎ ÑÏĞÀÉÒÎÌ.dmi'
+	icon_state = "4-ÅÕ ÍÀÏĞÀÂËßÅÍÍÛÉ ÑÏĞÀÉÒ ÌÀØÈÍÛ(ÑÌÎÒĞÈÒÅ ÏÎ ÀÍÀËÎÃÈÈ Ñ Î ÑÒÀĞÛÌÈ ÔÀÉËÀÌÈ ÑÏĞÀÉÒÎÂ)"
+	iscp = 'icons/gta13/cars/ÍÀÇÂÀÍÈÅ ÔÀÉËÀ ÑÎ ÑÏĞÀÉÒÎÌ.dmi'
+	isn = "ÑÏĞÀÉÒ ÍÀÏĞÀÂËÅÍÍÛÉ ÍÀ ÑÅÂÅĞ"
+	iss = "ŞÃ"
+	iswp ="ÇÀÏÀÄ Ñ ÏÀÑÑÀÆÈĞÎÌ"
+	isw = "ÇÀÏÀÄ"
+	isep = "ÂÑÎÑÒÎÊ Ñ ÏÀÑÑÀÆÈĞÎÌ"
+	ise = "ÂÎÑÒÎÊ"
+	move_delay = ÇÍÀ×ÅÍÈÅ - ×åì ìåíüøå, òåì áîëüøå ñêîğîñòü
+*/
