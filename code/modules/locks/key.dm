@@ -5,7 +5,7 @@
 	icon_state = "keys"
 	w_class = 1
 	var/key_data = ""
-
+	var/keyid = 0
 /obj/item/weapon/key/New(var/newloc,var/data)
 	if(data)
 		key_data = data
