@@ -6,6 +6,7 @@
 // "I know what you feel, bro (and thx)."
 //  - maxyo
 
+
 /obj/structure/simple_door
 	name = "wooden door"
 	desc = "It opens and closes - nothing out of the ordinary."
@@ -26,15 +27,14 @@
 	var/close_sound = 'sound/machines/door_close.ogg'
 	var/opening_time = 2
 	var/closing_time = 4
-	var/idkey = 0
 	var/lock = 0
+	var/iddoor = 0
 /obj/item/weapon/key/doorkey
 		name = " door key"
 		desc = "A keyring with a small steel key, and a yellow fob reading \"Choo Choo!\". DON'T ASK."
 		icon = 'icons/obj/vehicles.dmi'
 		icon_state = "train_keys"
 		w_class = 1
-		//var/keyid
 /obj/structure/simple_door/New(location)
 	..()
 	icon_state = door_type
@@ -78,7 +78,7 @@
 	moving = 0
 	layer = CLOSED_DOOR_LAYER
 
-
+	playsound(src.loc, 'sound/machines/keyboard/keypress1.ogg', 30, 0, 0)
 /obj/structure/simple_door/proc/SwitchState(animate)
 	if(density)
 		Open(animate)
@@ -91,14 +91,23 @@
 
 /obj/structure/simple_door/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(istype(I, /obj/item/weapon/key/doorkey) && density == 1)
-		lock = 1
+		Lockdoor(I)
 
-	if(istype(I, /obj/item/weapon/key/doorkey) && lock == 1)
-		lock = 0
+
+
+
 
 
 	playsound(src.loc, 'sound/machines/keyboard/keypress1.ogg', 30, 0, 0)
 
+/obj/structure/simple_door/proc/Lockdoor(obj/item/weapon/key/O)
+
+	if(iddoor == O.keyid && lock == 1)
+		lock = 0
+	else if(iddoor == O.keyid && lock == 0)
+		lock = 1
+
+	return 0
 
 /obj/structure/simple_door/proc/TryToSwitchState(atom/user, animate)
 	if(moving)
@@ -150,6 +159,7 @@
 	if(O.loc == loc)
 		return 1
 	return !density
+
 
 // Fallout 13 general doors directory
 
