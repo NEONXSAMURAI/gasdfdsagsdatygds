@@ -91,10 +91,9 @@ var/const/NO_EMAG_ACT = -50
 	return 1
 
 /obj/item/weapon/card/id
-	name = "identification card"
-	desc = "A card used to provide ID and determine access."
-	icon_state = "id"
-	item_state = "card-id"
+	name = "Stulte Passport"
+	desc = "A document, usually issued by a country's government, that certifies the identity and nationality of its holder ."
+	icon_state = "passport"
 
 	var/access = list()
 	var/registered_name = "Unknown" // The name registered_name on the card
@@ -149,7 +148,7 @@ var/const/NO_EMAG_ACT = -50
 	return
 
 /obj/item/weapon/card/id/proc/update_name()
-	var/final_name = "[registered_name]'s ID Card"
+	var/final_name = "[registered_name]'s passport"
 	if(military_rank && military_rank.name_short)
 		final_name = military_rank.name_short + " " + final_name
 	if(assignment)
@@ -196,7 +195,6 @@ var/const/NO_EMAG_ACT = -50
 	dat += text("Assignment: []</A><BR>\n", assignment)
 	dat += text("Fingerprint: []</A><BR>\n", fingerprint_hash)
 	dat += text("Blood Type: []<BR>\n", blood_type)
-	dat += text("DNA Hash: []<BR><BR>\n", dna_hash)
 	if(front && side)
 		dat +="<td align = center valign = top>Photo:<br><img src=front.png height=80 width=80 border=4><img src=side.png height=80 width=80 border=4></td>"
 	dat += "</tr></table>"
@@ -222,7 +220,6 @@ var/const/NO_EMAG_ACT = -50
 
 	to_chat(usr, text("\icon[] []: The current assignment on the card is [].", src, src.name, src.assignment))
 	to_chat(usr, "The blood type on the card is [blood_type].")
-	to_chat(usr, "The DNA hash on the card is [dna_hash].")
 	to_chat(usr, "The fingerprint hash on the card is [fingerprint_hash].")
 	return
 
