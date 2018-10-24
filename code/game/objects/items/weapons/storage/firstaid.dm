@@ -252,3 +252,15 @@
 	desc = "Mild painkiller, also known as Tylenol. Won't fix the cause of your headache (unlike cyanide), but might make it bearable."
 
 	startswith = list(/obj/item/weapon/reagent_containers/pill/paracetamol = 21)
+
+/obj/item/weapon/storage/pill_bottle/sweets
+	name = "bag of sweets"
+	desc = "Tasty!"
+	icon = 'icons/obj/candymachine.dmi'
+	icon_state = "candybag"
+	var/spawn_type = /obj/item/weapon/reagent_containers/food/snacks/sweet
+
+	/obj/item/weapon/storage/pill_bottle/sweets/New()
+		..()
+		for (var/i = 1 to 10)
+			new spawn_type(src)

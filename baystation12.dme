@@ -1034,6 +1034,7 @@
 #include "code\game\verbs\who.dm"
 #include "code\gta13\bench.dm"
 #include "code\gta13\billboard.dm"
+#include "code\gta13\candymachine.dm"
 #include "code\gta13\cars.dm"
 #include "code\gta13\coupe.dm"
 #include "code\gta13\day.dm"
