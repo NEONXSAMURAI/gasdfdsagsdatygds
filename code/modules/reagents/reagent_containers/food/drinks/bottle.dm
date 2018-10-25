@@ -13,6 +13,12 @@
 	var/obj/item/weapon/reagent_containers/glass/rag/rag = null
 	var/rag_underlay = "rag"
 
+/obj/item/weapon/reagent_containers/food/drinks/bottle/verb/SpinBottle() //set amount_per_transfer_from_this
+	set name = "Spin Bottle"
+	set category = "IC"
+	set src in range(1)
+	SpinAnimation(10, 10)
+
 /obj/item/weapon/reagent_containers/food/drinks/bottle/New()
 	..()
 	if(isGlass) unacidable = 1
