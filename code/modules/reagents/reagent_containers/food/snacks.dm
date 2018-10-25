@@ -3334,3 +3334,15 @@
 	New()
 		..()
 		bitesize = 3
+
+/obj/item/weapon/reagent_containers/food/snacks/sweet
+	name = "\improper Sweet"
+	desc = "Comes in many different and unique flavours!"
+	icon = 'icons/obj/candymachine.dmi'
+	bitesize = 5
+	nutriment_amt = 3
+
+/obj/item/weapon/reagent_containers/food/snacks/sweet/New()
+	..()
+	nutriment_desc = list("sugar" = 2)
+	icon_state = "sweet[rand(1,12)]"
