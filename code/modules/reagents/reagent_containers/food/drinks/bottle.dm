@@ -17,8 +17,12 @@
 	set name = "Spin Bottle"
 	set category = "IC"
 	set src in range(1)
-	SpinAnimation(10, 10)
-
+	SpinAnimation(140, 9)
+	sleep(90)
+	var/spinnn = pick(-240, -540, -270, -120, -90)
+	var/matrix/muuu = matrix(transform)
+	muuu.Turn(spinnn)
+	animate(src, transform = muuu, time = 10)
 /obj/item/weapon/reagent_containers/food/drinks/bottle/New()
 	..()
 	if(isGlass) unacidable = 1
