@@ -8,13 +8,6 @@
 	icon_state = "sportscar"
 	bound_width = 64
 	bound_height = 64
-	var/iscp = 'icons/gta13/cars/sportscar.dmi'
-	var/isn = "sportscar_north"
-	var/iss = "sportscar_south"
-	var/iswp ="sportscar_west_passenger"
-	var/isw = "sportscar_west"
-	var/isep = "sportscar_east_passenger"
-	var/ise = "sportscar_east"
 	fits_passenger = 1
 	passenger_item_visible = 1
 	load_item_visible = 1
