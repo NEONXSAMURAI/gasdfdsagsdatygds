@@ -559,7 +559,7 @@
 	src.overlays = null
 	if(src.dir == NORTH||SOUTH||WEST)
 		if(src.dir == NORTH)	//|| place car sprite over mobs
-			var/image/I = new(icon = iscp, icon_state = isn, layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[icon_state]_north", layer = src.layer + 0.2)
 			src.overlays += I
 
 			src.mob_offset_x = 2
@@ -573,7 +573,7 @@
 
 		else if(src.dir == SOUTH)
 
-			var/image/I = new(icon = iscp, icon_state = iss, layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[icon_state]_south", layer = src.layer + 0.2)
 			overlays += I
 				//||move the driver & passenger back to the original layer
 			if(passenger && load)
@@ -596,15 +596,15 @@
 			src.passenger_offset_x = 34
 			src.passenger_offset_y = 23
 
-			var/image/I = new(icon = iscp, icon_state = isw, layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[icon_state]_west", layer = src.layer + 0.2)
 			src.overlays += I
 			if(passenger && !load)
-				var/image/S = new(icon = iscp, icon_state = iswp, layer = src.layer + 0.2)
+				var/image/S = new(icon, icon_state = "[icon_state]_west_passenger", layer = src.layer + 0.2)
 				src.overlays += S
 
 		else if(src.dir == EAST)
 
-			var/image/I = new(icon = iscp, icon_state = isep, layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[icon_state]_east_passenger", layer = src.layer + 0.2)
 
 			src.passenger_offset_x = 20
 			src.passenger_offset_y = 10
@@ -618,7 +618,7 @@
 			src.overlays += I
 
 			if(!passenger )
-				var/image/S = new(icon = iscp, icon_state = ise, layer = src.layer + 0.2)
+				var/image/S = new(icon, icon_state = "[icon_state]_east", layer = src.layer + 0.2)
 				src.overlays += S
 
 	if(ismob(C))
@@ -815,26 +815,12 @@
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/redsportscar.dmi'
 	icon_state = "redsportscar"
-	iscp = 'icons/gta13/cars/redsportscar.dmi'
-	isn = "redsportscar_north"
-	iss = "redsportscar_south"
-	iswp ="redsportscar_west_passenger"
-	isw = "redsportscar_west"
-	isep = "redsportscar_east_passenger"
-	ise = "redsportscar_east"
 
 /obj/gta13cars/car/sportscar/bluesportcar
 	name = "blue sports car"
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/bluesportscar.dmi'
 	icon_state = "bluesportscar"
-	iscp = 'icons/gta13/cars/bluesportscar.dmi'
-	isn = "bluesportscar_north"
-	iss = "bluesportscar_south"
-	iswp ="bluesportscar_west_passenger"
-	isw = "bluesportscar_west"
-	isep = "bluesportscar_east_passenger"
-	ise = "bluesportscar_east"
 
 
 /obj/gta13cars/car/sportscar/greensportcar
@@ -842,27 +828,13 @@
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/greensportscar.dmi'
 	icon_state = "greensportscar"
-	iscp = 'icons/gta13/cars/greensportscar.dmi'
-	isn = "greensportscar_north"
-	iss = "greensportscar_south"
-	iswp ="greensportscar_west_passenger"
-	isw = "greensportscar_west"
-	isep = "greensportscar_east_passenger"
-	ise = "greensportscar_east"
 
 /*
-Øàáëîí ñîçäàíèÿ íîâûõ äâóõìåñòíûõ ìàøèí êàáğèîëåòîâ
-/obj/gta13cars/car/sportscar/âàøà ìàøèíà - Ïóòü
-	name = "ÒÓÒ ÍÀÇÂÀÍÈÅ ÌÀØÈÍÛ"
-	desc = "ÅÅ ÎÏÈÑÀÍÈÅ"
-	icon = 'icons/gta13/cars/ÍÀÇÂÀÍÈÅ ÔÀÉËÀ ÑÎ ÑÏĞÀÉÒÎÌ.dmi'
-	icon_state = "4-ÅÕ ÍÀÏĞÀÂËßÅÍÍÛÉ ÑÏĞÀÉÒ ÌÀØÈÍÛ(ÑÌÎÒĞÈÒÅ ÏÎ ÀÍÀËÎÃÈÈ Ñ Î ÑÒÀĞÛÌÈ ÔÀÉËÀÌÈ ÑÏĞÀÉÒÎÂ)"
-	iscp = 'icons/gta13/cars/ÍÀÇÂÀÍÈÅ ÔÀÉËÀ ÑÎ ÑÏĞÀÉÒÎÌ.dmi'
-	isn = "ÑÏĞÀÉÒ ÍÀÏĞÀÂËÅÍÍÛÉ ÍÀ ÑÅÂÅĞ"
-	iss = "ŞÃ"
-	iswp ="ÇÀÏÀÄ Ñ ÏÀÑÑÀÆÈĞÎÌ"
-	isw = "ÇÀÏÀÄ"
-	isep = "ÂÑÎÑÒÎÊ Ñ ÏÀÑÑÀÆÈĞÎÌ"
-	ise = "ÂÎÑÒÎÊ"
-	move_delay = ÇÍÀ×ÅÍÈÅ - ×åì ìåíüøå, òåì áîëüøå ñêîğîñòü
+Ã˜Ã Ã¡Ã«Ã®Ã­ Ã±Ã®Ã§Ã¤Ã Ã­Ã¨Ã¿ Ã­Ã®Ã¢Ã»Ãµ Ã¤Ã¢Ã³ÃµÃ¬Ã¥Ã±Ã²Ã­Ã»Ãµ Ã¬Ã Ã¸Ã¨Ã­ ÃªÃ Ã¡Ã°Ã¨Ã®Ã«Ã¥Ã²Ã®Ã¢
+/obj/gta13cars/car/sportscar/Ã¢Ã Ã¸Ã  Ã¬Ã Ã¸Ã¨Ã­Ã  - ÃÃ³Ã²Ã¼
+	name = "Ã’Ã“Ã’ ÃÃ€Ã‡Ã‚Ã€ÃÃˆÃ… ÃŒÃ€Ã˜ÃˆÃÃ›"
+	desc = "Ã…Ã… ÃÃÃˆÃ‘Ã€ÃÃˆÃ…"
+	icon = 'icons/gta13/cars/ÃÃ€Ã‡Ã‚Ã€ÃÃˆÃ… Ã”Ã€Ã‰Ã‹Ã€ Ã‘Ã Ã‘ÃÃÃ€Ã‰Ã’ÃÃŒ.dmi'
+	icon_state = "4-Ã…Ã• ÃÃ€ÃÃÃ€Ã‚Ã‹ÃŸÃ…ÃÃÃ›Ã‰ Ã‘ÃÃÃ€Ã‰Ã’ ÃŒÃ€Ã˜ÃˆÃÃ›(Ã‘ÃŒÃÃ’ÃÃˆÃ’Ã… ÃÃ Ã€ÃÃ€Ã‹ÃÃƒÃˆÃˆ Ã‘ Ã Ã‘Ã’Ã€ÃÃ›ÃŒÃˆ Ã”Ã€Ã‰Ã‹Ã€ÃŒÃˆ Ã‘ÃÃÃ€Ã‰Ã’ÃÃ‚)"
+	move_delay = Ã‡ÃÃ€Ã—Ã…ÃÃˆÃ… - Ã—Ã¥Ã¬ Ã¬Ã¥Ã­Ã¼Ã¸Ã¥, Ã²Ã¥Ã¬ Ã¡Ã®Ã«Ã¼Ã¸Ã¥ Ã±ÃªÃ®Ã°Ã®Ã±Ã²Ã¼
 */
