@@ -123,6 +123,8 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/mc9mm
 	allowed_magazines = /obj/item/ammo_magazine/mc9mm
+	var/main_icon_state = "holdout pistol"
+
 /obj/item/weapon/gun/projectile/pistol/flash
 	name = "holdout signal pistol"
 	magazine_type = /obj/item/ammo_magazine/mc9mm/flash
@@ -139,7 +141,8 @@
 	fire_delay = 3.5
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
-	var/main_icon_state = "guncomp"
+	main_icon_state = "guncomp"
+
 /obj/item/weapon/gun/projectile/pistol/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		if(silenced)
@@ -171,11 +174,11 @@
 /obj/item/weapon/gun/projectile/pistol/update_icon()
 	..()
 	if(silenced)
-		icon_state = "[icon_state]-silencer"
+		icon_state = "[main_icon_state]-silencer"
 	else
 		icon_state = main_icon_state
 	if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
-		icon_state = "[icon_state]-e"
+		icon_state = "[main_icon_state]-e"
 
 /obj/item/weapon/silencer
 	name = "silencer"
