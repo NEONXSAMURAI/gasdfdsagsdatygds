@@ -1039,6 +1039,7 @@
 #include "code\gta13\cars.dm"
 #include "code\gta13\coupe.dm"
 #include "code\gta13\day.dm"
+#include "code\gta13\dirt.dm"
 #include "code\gta13\fences.dm"
 #include "code\gta13\fireplace.dm"
 #include "code\gta13\fountain.dm"
