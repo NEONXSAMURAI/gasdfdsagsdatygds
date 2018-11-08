@@ -43,6 +43,9 @@ var/global/list/stool_cache = list() //haha stool
 /obj/item/weapon/stool/bar/padded
 	icon_state = "bar_stool_padded_preview"
 
+/obj/item/weapon/stool/bar/padded/another
+	icon_state = "stool_padded_new"
+
 /obj/item/weapon/stool/bar/padded/New(var/newloc, var/new_material)
 	..(newloc, "steel", "carpet")
 
