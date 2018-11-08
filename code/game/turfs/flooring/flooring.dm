@@ -237,3 +237,11 @@ var/list/flooring_types
 	icon = 'icons/turf/floors.dmi'
 	icon_base = "diona"
 	flags = TURF_ACID_IMMUNE | TURF_REMOVE_SHOVEL
+
+/decl/flooring/grass/outdoors
+	name = "grass"
+	desc = "Do they smoke grass out in space, Bowie? Or do they smoke AstroTurf?"
+	icon = 'icons/turf/outdoors.dmi'
+	has_base_range = 2
+	flags = TURF_CAN_BURN
+	icon_base = "grass"
