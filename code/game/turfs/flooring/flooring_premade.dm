@@ -50,6 +50,12 @@
 	icon_state = "grass0"
 	initial_flooring = /decl/flooring/grass
 
+/turf/simulated/floor/grass/another
+	name = "grass patch"
+	icon = 'icons/turf/flooring/grass.dmi'
+	icon_state = "grasswhite0"
+	initial_flooring = /decl/flooring/grass/another
+
 /turf/simulated/floor/diona
 	name = "biomass"
 	icon = 'icons/turf/floors.dmi'
