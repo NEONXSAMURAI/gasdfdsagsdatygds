@@ -1044,6 +1044,7 @@
 #include "code\gta13\road.dm"
 #include "code\gta13\signs.dm"
 #include "code\gta13\simple_door.dm"
+#include "code\gta13\sofa.dm"
 #include "code\gta13\street.dm"
 #include "code\gta13\streetlight.dm"
 #include "code\gta13\vehicles.dm"
