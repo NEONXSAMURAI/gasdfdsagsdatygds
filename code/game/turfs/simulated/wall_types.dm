@@ -41,6 +41,8 @@
 	..(newloc,"silver")
 /turf/simulated/wall/rust/New(var/newloc)
 	..(newloc,"rust")
+/turf/simulated/wall/rust/New(var/newloc)
+	..(newloc,"rust")
 /turf/simulated/wall/phoron/New(var/newloc)
 	..(newloc,"phoron")
 /turf/simulated/wall/sandstone/New(var/newloc)
