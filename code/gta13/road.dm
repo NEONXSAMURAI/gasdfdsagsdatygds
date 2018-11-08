@@ -120,6 +120,8 @@
 	name = "pavement"
 	icon = 'icons/gta13/pave.dmi'
 	icon_state = "paved"
+/turf/simulated/floor/pavement/stone
+	icon_state = "stonepavement"
 /turf/simulated/floor/pavement/east
 	icon_state = "paved2"
 /turf/simulated/floor/pavement/west
@@ -144,6 +146,7 @@
 	icon_state = "paved13"
 /turf/simulated/floor/pavement/edge/northwest/corner
 	icon_state = "paved9"
+
 
 //| Ржавчина
 /turf/simulated/floor/rust
@@ -225,3 +228,20 @@
 
 /turf/simulated/floor/borders/border16
 	icon_state = "border16"
+
+//something new
+/turf/simulated/floor/grooved
+	name = "grooved"
+	icon = 'icons/gta13/roads.dmi'
+	icon_state = "grooved"
+
+/turf/simulated/floor/grooved/another
+	icon_state = "grooved2"
+
+/turf/simulated/floor/tiledwood
+	name = "tiled wooden floor"
+	icon = 'icons/gta13/roads.dmi'
+	icon_state = "tiledwood"
+
+/turf/simulated/floor/tiledwood/another
+	icon_state = "tiledwood2"
