@@ -4,11 +4,9 @@
 	#include "torch_areas.dm"
 	#include "torch_elevator.dm"
 	#include "torch_holodecks.dm"
-	#include "torch_overmap.dm"
 	#include "torch_presets.dm"
 	#include "torch_ranks.dm"
-	#include "torch_shuttles.dm"
-	#include "torch_unit_testing.dm"
+
 	#include "torch_antagonism.dm"
 	#include "torch_npcs.dm"
 	#include "torch_security_state.dm"
@@ -66,23 +64,7 @@
 
 	#include "city-1.dmm"
 	#include "city-2.dmm"
-	#include "../away/empty.dmm"
-	#include "../away/mining/mining.dm"
-	#include "../away/derelict/derelict.dm"
-	#include "../away/bearcat/bearcat.dm"
-	#include "../away/lost_supply_base/lost_supply_base.dm"
-	#include "../away/marooned/marooned.dm"
-	#include "../away/smugglers/smugglers.dm"
-	#include "../away/magshield/magshield.dm"
-	#include "../away/casino/casino.dm"
-	#include "../away/yacht/yacht.dm"
-	#include "../away/blueriver/blueriver.dm"
-	#include "../away/slavers/slavers_base.dm"
-	#include "../away/hydro/hydro.dm"
-	#include "../away/mobius_rift/mobius_rift.dm"
-	#include "../away/icarus/icarus.dm"
-	#include "../away/errant_pisces/errant_pisces.dm"
-	#include "../away/lar_maria/lar_maria.dm"
+
 
 	#include "../../code/modules/lobby_music/moon.dm"
 
