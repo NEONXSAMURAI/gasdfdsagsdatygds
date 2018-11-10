@@ -6,7 +6,7 @@
 	light_color = "#ebf7fe"
 	light_power = 5
 	light_range = 4
-	plane = -11
+	plane = -3
 	layer = 3.7
 	density = 1
 	anchored = 1
