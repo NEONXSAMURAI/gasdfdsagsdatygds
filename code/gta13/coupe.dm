@@ -16,7 +16,11 @@
 		//||pixel_y offset for mob overlay
 	mob_offset_y = 7
 	passenger_offset_y = 20
-
+	var/main_icon_state = "sportscar"
+	var/xd = 2
+	var/yd = 20
+	var/xp = 22
+	var/yp = 20
 //-------------------------------------------
 // Standard procs
 //-------------------------------------------
@@ -552,21 +556,21 @@
 	src.overlays = null
 	if(src.dir == NORTH||SOUTH||WEST)
 		if(src.dir == NORTH)	//|| place car sprite over mobs
-			var/image/I = new(icon, icon_state = "[icon_state]_north", layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[main_icon_state]_north", layer = src.layer + 0.2)
 			src.overlays += I
 
-			src.mob_offset_x = 2
+			src.mob_offset_x = xd
 			src.mob_offset_y = 20
 				//||move the driver & passenger back to the original layer
 			if(passenger && load)
 				C.layer = default_layer
 				D.layer = default_layer
-			src.passenger_offset_x = 22
+			src.passenger_offset_x = xp
 			src.passenger_offset_y = 20
 
 		else if(src.dir == SOUTH)
 
-			var/image/I = new(icon, icon_state = "[icon_state]_south", layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[main_icon_state]_south", layer = src.layer + 0.2)
 			overlays += I
 				//||move the driver & passenger back to the original layer
 			if(passenger && load)
@@ -589,15 +593,15 @@
 			src.passenger_offset_x = 34
 			src.passenger_offset_y = 23
 
-			var/image/I = new(icon, icon_state = "[icon_state]_west", layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[main_icon_state]_west", layer = src.layer + 0.2)
 			src.overlays += I
 			if(passenger && !load)
-				var/image/S = new(icon, icon_state = "[icon_state]_west_passenger", layer = src.layer + 0.2)
+				var/image/S = new(icon, icon_state = "[main_icon_state]_west_passenger", layer = src.layer + 0.2)
 				src.overlays += S
 
 		else if(src.dir == EAST)
 
-			var/image/I = new(icon, icon_state = "[icon_state]_east_passenger", layer = src.layer + 0.2)
+			var/image/I = new(icon, icon_state = "[main_icon_state]_east_passenger", layer = src.layer + 0.2)
 
 			src.passenger_offset_x = 20
 			src.passenger_offset_y = 10
@@ -611,7 +615,7 @@
 			src.overlays += I
 
 			if(!passenger )
-				var/image/S = new(icon, icon_state = "[icon_state]_east", layer = src.layer + 0.2)
+				var/image/S = new(icon, icon_state = "[main_icon_state]_east", layer = src.layer + 0.2)
 				src.overlays += S
 
 	if(ismob(C))
@@ -808,20 +812,30 @@
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/redsportscar.dmi'
 	icon_state = "redsportscar"
+	main_icon_state = "redsportscar"
 
 /obj/gta13cars/car/sportscar/bluesportcar
 	name = "blue sports car"
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/bluesportscar.dmi'
 	icon_state = "bluesportscar"
-
+	main_icon_state = "bluesportscar"
 
 /obj/gta13cars/car/sportscar/greensportcar
 	name = "green sports car"
 	desc = "A very luxurious vehicle."
 	icon = 'icons/gta13/cars/greensportscar.dmi'
 	icon_state = "greensportscar"
+	main_icon_state = "greensportscar"
 
+
+/obj/gta13cars/car/sportscar/jeepmesa
+	name = "green sports44 car"
+	desc = "A very luxur4ious vehicle."
+	icon = 'icons/gta13/cars/jeep-vehicles.dmi'
+	icon_state = "jeep_mesa"
+	main_icon_state = "jeep_mesa"
+	xd = 12
 /*
 Øàáëîí ñîçäàíèÿ íîâûõ äâóõìåñòíûõ ìàøèí êàáðèîëåòîâ
 /obj/gta13cars/car/sportscar/âàøà ìàøèíà - Ïóòü

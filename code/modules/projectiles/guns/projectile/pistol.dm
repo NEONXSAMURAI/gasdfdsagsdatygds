@@ -123,13 +123,12 @@
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/mc9mm
 	allowed_magazines = /obj/item/ammo_magazine/mc9mm
-	var/main_icon_state = "holdout pistol"
-
+	var/main_icon_state = "pistol"
 /obj/item/weapon/gun/projectile/pistol/flash
 	name = "holdout signal pistol"
 	magazine_type = /obj/item/ammo_magazine/mc9mm/flash
 
-/obj/item/weapon/gun/projectile/pistol/USP
+/obj/item/weapon/gun/projectile/pistol/usp
 	name = ".45 USP pistol"
 	desc = "Uses .45 rounds."
 	icon = 'icons/obj/glockk.dmi'
@@ -138,11 +137,52 @@
 	allowed_magazines = /obj/item/ammo_magazine/c45m
 	caliber = ".45"
 	accuracy = -0.35
-	fire_delay = 3.5
+	fire_delay = 3.2
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	load_method = MAGAZINE
 	main_icon_state = "guncomp"
 
+/obj/item/weapon/gun/projectile/pistol/uspf
+	name = ".45 fancy USP pistol"
+	desc = "Uses .45 rounds."
+	icon = 'icons/obj/glockk.dmi'
+	icon_state = "guncompfancy"
+	magazine_type = /obj/item/ammo_magazine/c45m/flash
+	allowed_magazines = /obj/item/ammo_magazine/c45m
+	caliber = ".45"
+	accuracy = -0.35
+	fire_delay = 3.5
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	main_icon_state = "guncompfancy"
+
+/obj/item/weapon/gun/projectile/pistol/glocke
+	name = ".9mm glock pistol"
+	desc = "Uses .9mm rounds."
+	icon = 'icons/obj/glockk.dmi'
+	icon_state = "glock"
+	magazine_type = /obj/item/ammo_magazine/c45m/flash
+	allowed_magazines = /obj/item/ammo_magazine/c45m
+	caliber = "9mm"
+	accuracy = -0.20
+	fire_delay = 3.1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	main_icon_state = "glock"
+
+/obj/item/weapon/gun/projectile/pistol/glockef
+	name = ".9mm glock pistol"
+	desc = "Uses .9mm rounds."
+	icon = 'icons/obj/glockk.dmi'
+	icon_state = "glockfancy"
+	magazine_type = /obj/item/ammo_magazine/mc9mm/flash
+	allowed_magazines = /obj/item/ammo_magazine/mc9mm
+	caliber = "9mm"
+	accuracy = -0.20
+	fire_delay = 3.1
+	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
+	load_method = MAGAZINE
+	main_icon_state = "glockfancy"
 /obj/item/weapon/gun/projectile/pistol/attack_hand(mob/user as mob)
 	if(user.get_inactive_hand() == src)
 		if(silenced)
@@ -178,8 +218,9 @@
 	else
 		icon_state = main_icon_state
 	if(!(ammo_magazine && ammo_magazine.stored_ammo.len))
-		icon_state = "[main_icon_state]-e"
-
+		if(silenced)
+			icon_state = "[main_icon_state]-silencer-e"
+		else icon_state = "[main_icon_state]-e"
 /obj/item/weapon/silencer
 	name = "silencer"
 	desc = "A silencer."
