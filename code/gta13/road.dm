@@ -44,12 +44,12 @@
 /turf/simulated/floor/road/southwestsmall
 	icon_state = "road11"
 
-/turf/simulated/floor/road/New()
+/turf/simulated/floor/road/lightroad/New()
 	spawn()
 		while(1)
 			change_time_of_day()
 
-/turf/simulated/floor/road/proc/change_time_of_day()
+/turf/simulated/floor/road/lightroad/proc/change_time_of_day()
 	if(light_power == 5)
 		sleep(60)
 		light_power = 4.5
