@@ -19,7 +19,7 @@
 		return ..()
 
 	if(is_stump)
-		if(istype(W,/obj/item/weapon/shovel))
+		if(istype(W,/obj/item/weapon/shovel || /obj/item/weapon/material/twohanded/fireaxe))
 			if(do_after(user, 5 SECONDS))
 				visible_message("<span class='notice'>\The [user] digs up \the [src] stump with \the [W].</span>")
 				qdel(src)
