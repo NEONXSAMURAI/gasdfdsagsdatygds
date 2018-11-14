@@ -9,6 +9,8 @@
 	light_power = 5
 	light_range = 2
 
+/turf/simulated/floor/road/lightroad
+	icon_state = "road"
 /turf/simulated/floor/road/vertical/
 	icon_state = "road1"
 /turf/simulated/floor/road/vertical/zebra
