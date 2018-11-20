@@ -1,5 +1,5 @@
 var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-")
-
+var/global/list/valid_nationality = list("Ukrainian", "Russian", "American")
 /datum/preferences
 	var/species = SPECIES_HUMAN         //Species datum to use.
 	var/b_type = "A+"					//blood type (not-chooseable)
@@ -20,7 +20,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	var/b_eyes = 0						//Eye color
 	var/s_base = ""						//Base skin colour
 	var/list/body_markings = list()
-
+	var/nationality = "Russian"
 	// maps each organ to either null(intact), "cyborg" or "amputated"
 	// will probably not be able to do this for head and torso ;)
 	var/list/organ_data
@@ -56,6 +56,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	from_file(S["eyes_green"], pref.g_eyes)
 	from_file(S["eyes_blue"], pref.b_eyes)
 	from_file(S["b_type"], pref.b_type)
+	from_file(S["nationality"], pref.nationality)
 	from_file(S["disabilities"], pref.disabilities)
 	from_file(S["organ_data"], pref.organ_data)
 	from_file(S["rlimb_data"], pref.rlimb_data)
@@ -83,6 +84,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	to_file(S["eyes_green"], pref.g_eyes)
 	to_file(S["eyes_blue"], pref.b_eyes)
 	to_file(S["b_type"], pref.b_type)
+	to_file(S["nationality"], pref.nationality)
 	to_file(S["disabilities"], pref.disabilities)
 	to_file(S["organ_data"], pref.organ_data)
 	to_file(S["rlimb_data"], pref.rlimb_data)
@@ -108,6 +110,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	pref.g_eyes			= sanitize_integer(pref.g_eyes, 0, 255, initial(pref.g_eyes))
 	pref.b_eyes			= sanitize_integer(pref.b_eyes, 0, 255, initial(pref.b_eyes))
 	pref.b_type			= sanitize_text(pref.b_type, initial(pref.b_type))
+	pref.nationality	= sanitize_text(pref.nationality, initial(pref.nationality))
 	pref.has_cortical_stack = sanitize_bool(pref.has_cortical_stack, initial(pref.has_cortical_stack))
 
 	var/datum/species/mob_species = all_species[pref.species]
@@ -163,7 +166,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	. += "Needs Glasses: <a href='?src=\ref[src];disabilities=[NEARSIGHTED]'><b>[pref.disabilities & NEARSIGHTED ? "Yes" : "No"]</b></a><br>"
 	. += "Limbs: <a href='?src=\ref[src];limbs=1'>Adjust</a> <a href='?src=\ref[src];reset_limbs=1'>Reset</a><br>"
 	. += "Internal Organs: <a href='?src=\ref[src];organs=1'>Adjust</a><br>"
-
+	. += "Nationality: <a href='?src=\ref[src];nationality=1'>[pref.nationality]</a><br>"
 	//display limbs below
 	var/ind = 0
 	for(var/name in pref.organ_data)
@@ -299,6 +302,12 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		var/new_b_type = input(user, "Choose your character's blood-type:", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in valid_bloodtypes
 		if(new_b_type && CanUseTopic(user))
 			pref.b_type = new_b_type
+			return TOPIC_REFRESH
+
+	else if(href_list["nationality"])
+		var/new_b_type = input(user, "Choose your character's nationality:", CHARACTER_PREFERENCE_INPUT_TITLE) as null|anything in valid_nationality
+		if(new_b_type && CanUseTopic(user))
+			pref.nationality = new_b_type
 			return TOPIC_REFRESH
 
 	else if(href_list["show_species"])
