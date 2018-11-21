@@ -55,6 +55,8 @@ var/list/flooring_cache = list()
 			overlays |= get_damage_overlay("broken[broken]", BLEND_MULTIPLY)
 		if(!isnull(burnt) && (flooring.flags & TURF_CAN_BURN))
 			overlays |= get_damage_overlay("burned[burnt]")
+	if(weather_overlay)
+		overlays += weather_overlay
 
 	if(update_neighbors)
 		for(var/turf/simulated/floor/F in orange(src, 1))

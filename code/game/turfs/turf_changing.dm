@@ -32,7 +32,7 @@
 	var/old_affecting_lights = affecting_lights
 	var/old_lighting_overlay = lighting_overlay
 	var/old_corners = corners
-
+	var/old_weather_overlay = weather_overlay
 //	log_debug("Replacing [src.type] with [N]")
 
 
@@ -49,11 +49,12 @@
 
 	var/turf/simulated/W = new N( locate(src.x, src.y, src.z) )
 
-	W.opaque_counter = opaque_counter
 
 	if(ispath(N, /turf/simulated))
 		if(old_fire)
 			fire = old_fire
+		if(old_weather_overlay)
+			W.weather_overlay = old_weather_overlay
 		if (istype(W,/turf/simulated/floor))
 			W.RemoveLattice()
 	else if(old_fire)
